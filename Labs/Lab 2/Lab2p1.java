@@ -179,5 +179,6 @@ public class Lab2p1{
             return Long.valueOf(oddDigits);
 
         return -1;
+        
     }
 }
