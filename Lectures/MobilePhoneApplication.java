@@ -1,79 +1,47 @@
-public class MobilePhone {
 
-    public static final double MAX_SCREEN_SIZE = 8.0;
+import java.util.*;
 
-    public String owner;
-    private String color;
-    private double screenSize;
-    private int num;
+public class MobilePhoneApplication {
 
-    private static int numofSMS;
+    public static void main(String[] args){
 
-    //overloading constructor
-    public MobilePhone(){
-        //owner = "defaultOwner";
-        //color = "white";
-        //screenSize = 5.0;
-        this("default Owner", "white", 5.0);
-    }
+        MobilePhone myPhone = new MobilePhone();
+        myPhone.printContent();
+        myPhone.setSize(10);
+        System.out.println("My phone screen Size : "+ myPhone.getSize());
+        
+        App app = new App("Facebook",0.0);
+        App app1 = new App("weChat", 0.0);
+        App app2 = new App("Whatsapp", 0.0);
+        App app3 = new App("Angry bird", 2.0);
 
-    public MobilePhone(String owner, String color, double screenSize){
-        this.owner = owner;
-        this.color = color;
-        this.screenSize = screenSize;
-    }
-    //getter 
-    public String getOwner(){
-        return owner;
-    }
-    public String getColor(){
-        return color;
-    }
-    public double getSize(){
-        return screenSize;
-    }
-    public static int getNumOfSMS(){
-        return numofSMS;
-    }
-    public int getNum(){
-        return num;
-    }
+        ArrayList<App> appStore = new ArrayList<App>();
+        appStore.add(app1);
+        appStore.add(app2);
+        appStore.add(app3);
+
+        MobilePhone johnPhone = new MobilePhone("John", "Red", 7.0, app, appStore);
+        //johnPhone.getApp().print();
+        johnPhone.getAppStore().get(2).print();
     
-    //setter
-    public void setOwner(String owner){
-        this.owner = owner;
-    }
-    public void setColor(String color){
-        this.color = color;
-    }
-    public void setSize(double screenSize){
-        if(screenSize > MAX_SCREEN_SIZE)
-            this.screenSize = MAX_SCREEN_SIZE;
-        else{
-            this.screenSize = screenSize;
-        }
-    }
+        //override the default owner 
+        //myPhone.setOwner("Jane");
+        //myPhone.sendSMS("tom", "hi");
+        
+        //johnPhone.sendSMS("Jane", "hi");
 
-    public void ring(){
-        System.out.println("ring ring ring");
-    }
+        //System.out.println("the current owner is " + myPhone.getOwner());
 
-    public String sendSMS(String receiver, String message){
-        numofSMS++;
-        num++;
-        System.out.println("hi" + receiver + " " + message);
-        return "Successful";
-    }
+        //System.out.println("the number of sms sent so far is : " + myPhone.getNum());
 
-    public void printContent(){
-        System.out.println("the owner is " + owner + "; the color is " + color + "; the screen size is: " + screenSize);
-    }
+        //MobilePhone copyPhone = myPhone.clonePhone();
+        //myPhone.changeName();
+        //myPhone.printContent();    
+        //copyPhone.printContent();
+        //MobilePhone yourPhone = new MobilePhone("john", "red" , 7.0);
+        //yourPhone.printContent();
 
-    public MobilePhone clonePhone(){
-        return new MobilePhone(owner, color, screenSize);
-    }
 
-    public void changeName(){
-        this.owner = "tom";
+
     }
 }

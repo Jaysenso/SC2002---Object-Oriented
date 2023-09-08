@@ -1,28 +1,97 @@
-public class MobilePhone {
-    public static void main(String[] args){
+import java.util.*;
 
-        MobilePhone myPhone = new MobilePhone();
-        myPhone.printContent();
-        myPhone.setSize(10);
-        System.out.println("My phone screen Size : "+ myPhone.getSize());
-        //override the default owner 
-        //myPhone.setOwner("Jane");
-        //myPhone.sendSMS("tom", "hi");
-        //MobilePhone johnPhone = new MobilePhone("John", "Red", 7.0);
-        //johnPhone.sendSMS("Jane", "hi");
+public class MobilePhone{
 
-        //System.out.println("the current owner is " + myPhone.getOwner());
+    public static final double MAX_SCREEN_SIZE = 8.0;
 
-        //System.out.println("the number of sms sent so far is : " + myPhone.getNum());
+    public String owner;
+    private String color;
+    private double screenSize;
+    private int num;
+    private App app;
+    private ArrayList<App> appStore;
 
-        MobilePhone copyPhone = myPhone.clonePhone();
-        myPhone.changeName();
-        myPhone.printContent();    
-        copyPhone.printContent();
-        //MobilePhone yourPhone = new MobilePhone("john", "red" , 7.0);
-        //yourPhone.printContent();
+    private static int numofSMS;
 
+    //overloading constructor
+    public MobilePhone(){
+        owner = "defaultOwner";
+        color = "white";
+        screenSize = 5.0;
+        //this("default Owner", "white", 5.0);
+    }
 
+    public MobilePhone(String owner, String color, double screenSize, App app, ArrayList<App> appStore){
+        this.owner = owner;
+        this.color = color;
+        this.screenSize = screenSize;
+        this.app = app;
+        this.appStore = appStore;
+    }
+    
+    //getter 
+    public String getOwner(){
+        return owner;
+    }
+    public String getColor(){
+        return color;
+    }
+    public double getSize(){
+        return screenSize;
+    }
+    public static int getNumOfSMS(){
+        return numofSMS;
+    }
+    public int getNum(){
+        return num;
+    }
+    public App getApp(){
+        return app;
+    }
+    public ArrayList<App> getAppStore(){
+        return appStore;
+    }
+    public void setAppstore(ArrayList<App> appStore){
+        this.appStore = appStore;
+    }
+    public void setApp(App app){
+        this.app = app;
+    }
+    //setter
+    public void setOwner(String owner){
+        this.owner = owner;
+    }
+    public void setColor(String color){
+        this.color = color;
+    }
+    public void setSize(double screenSize){
+        if(screenSize > MAX_SCREEN_SIZE)
+            this.screenSize = MAX_SCREEN_SIZE;
+        else{
+            this.screenSize = screenSize;
+        }
+    }
 
+    public void ring(){
+        System.out.println("ring ring ring");
+    }
+
+    public String sendSMS(String receiver, String message){
+        numofSMS++;
+        num++;
+        System.out.println("hi" + receiver + " " + message);
+        return "Successful";
+    }
+
+    public void printContent(){
+        System.out.println("the owner is " + owner + "; the color is " + color + "; the screen size is: " + screenSize);
+    }
+
+    public MobilePhone clonePhone(){
+        return new MobilePhone(owner, color, screenSize, app, appStore);
+    }
+
+    public void changeName(){
+        this.owner = "tom";
     }
 }
