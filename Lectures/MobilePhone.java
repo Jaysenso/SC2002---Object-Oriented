@@ -1,12 +1,12 @@
 import java.util.*;
 
-public class MobilePhone{
+public abstract class MobilePhone{
 
     public static final double MAX_SCREEN_SIZE = 8.0;
 
-    public String owner;
-    private String color;
-    private double screenSize;
+    protected String owner;
+    protected String color;
+    protected double screenSize;
     private int num;
     private App app;
     private ArrayList<App> appStore;
@@ -21,14 +21,14 @@ public class MobilePhone{
         //this("default Owner", "white", 5.0);
     }
 
-    public MobilePhone(String owner, String color, double screenSize, App app, ArrayList<App> appStore){
+    public MobilePhone(String owner, String color, double screenSize){ //App app, ArrayList<App> appStore){
         this.owner = owner;
         this.color = color;
         this.screenSize = screenSize;
-        this.app = app;
-        this.appStore = appStore;
+        // this.app = app;
+        // this.appStore = appStore;
     }
-    
+
     //getter 
     public String getOwner(){
         return owner;
@@ -51,6 +51,7 @@ public class MobilePhone{
     public ArrayList<App> getAppStore(){
         return appStore;
     }
+    
     public void setAppstore(ArrayList<App> appStore){
         this.appStore = appStore;
     }
@@ -72,14 +73,13 @@ public class MobilePhone{
         }
     }
 
-    public void ring(){
-        System.out.println("ring ring ring");
-    }
+    public abstract void ring();
+    
 
     public String sendSMS(String receiver, String message){
         numofSMS++;
         num++;
-        System.out.println("hi" + receiver + " " + message);
+        System.out.println("hi " + receiver + " " + message);
         return "Successful";
     }
 
@@ -88,7 +88,7 @@ public class MobilePhone{
     }
 
     public MobilePhone clonePhone(){
-        return new MobilePhone(owner, color, screenSize, app, appStore);
+        return new MobilePhone(owner, color, screenSize);// app, appStore);
     }
 
     public void changeName(){
