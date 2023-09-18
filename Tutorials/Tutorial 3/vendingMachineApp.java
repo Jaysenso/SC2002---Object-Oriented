@@ -1,13 +1,14 @@
-
 import java.util.Scanner;
 
 public class vendingMachineApp {
     public static void main(String[] args) {
-    double drinkCost;
+        double drinkCost, totalAmount;
+        vendingMachine VM = new vendingMachine();
 
-        //exception handling default return -1 unless legal input
-        drinkCost = selectDrink();
-        System.out.println(drinkCost);
+        drinkCost = VM.selectDrink();
+        totalAmount = VM.insertCoins(drinkCost);
+        VM.checkChange(totalAmount, drinkCost);
+        VM.printReceipt();
     }
 }
-}
+
