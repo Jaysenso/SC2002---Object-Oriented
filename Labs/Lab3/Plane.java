@@ -1,8 +1,9 @@
 public class Plane {
     //instantiate array of 12 PlaneSeats objects
-    final static int numOfSeats = 120;
+    final static int numOfSeats = 12;
     private static PlaneSeat[] seat = new PlaneSeat[numOfSeats];
     private static int numEmptySeat;
+
 
     public Plane(){
         //initialize the PlaneSeat array
@@ -17,11 +18,9 @@ public class Plane {
     }
 
     public void showEmptySeats(){
-        int seatNumber;
         for(int i = 0; i < numOfSeats; i++){
             if(!seat[i].isOccupied()){
-                seatNumber = i + 1;
-                System.out.println("SeatID " + seatNumber);
+                System.out.println("SeatID " + seat[i].getSeatID());
             }
         }
     }
@@ -58,7 +57,6 @@ public class Plane {
                     }
                 }
             }
-
             //display output list (since array is already sorted, we just iterate 12 - numEmptySeats time)
             for(int i = numEmptySeat; i < numOfSeats; i++){
                 if(tempSeatArray[i].isOccupied())
