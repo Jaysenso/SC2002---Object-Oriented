@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class FiveGPhone extends MobilePhone{
+public class FiveGPhone extends MobilePhone implements IntPhone{
 
     private double dataRate;
     private double credit;
