@@ -10,7 +10,7 @@ public class Graduate extends Student {
         this.researchReport = researchReport;
         this.finalExam = finalExam;
     }
-
+ 
     public double calOverall(){
         double overall = assignment.getPercentage() * assignment.getScore();
         overall +=  researchReport.getPercentage() * researchReport.getScore();
