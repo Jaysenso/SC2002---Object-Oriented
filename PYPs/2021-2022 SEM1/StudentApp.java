@@ -13,7 +13,7 @@ public class StudentApp{
         Student Shane = new Graduate("Shane", assignment2, researchReport2, finalExam2);  
 
         printOverall(Johnny);
-        printOverall(Shane);
+        printOverall(Shane); 
     }
 
     //dynamic binding (upcasting graduate&undergraduate to Student (base class)) 
