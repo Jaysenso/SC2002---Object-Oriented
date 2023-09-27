@@ -87,9 +87,9 @@ public abstract class MobilePhone{
         System.out.println("the owner is " + owner + "; the color is " + color + "; the screen size is: " + screenSize);
     }
 
-    public MobilePhone clonePhone(){
-        return new MobilePhone(owner, color, screenSize);// app, appStore);
-    }
+    // public MobilePhone clonePhone(){
+    //     return new MobilePhone(owner, color, screenSize);// app, appStore);
+    // }
 
     public void changeName(){
         this.owner = "tom";

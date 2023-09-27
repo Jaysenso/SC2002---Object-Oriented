@@ -5,15 +5,27 @@ public class MobilePhoneApplication {
 
     public static void main(String[] args){
 
-        MobilePhone myPhone = new MobilePhone();
-        myPhone.printContent();
-        myPhone.setSize(10);
+        // MobilePhone myPhone = new MobilePhone();
+        // myPhone.printContent();
+        // myPhone.setSize(10);
 
-        FiveGPhone johnPhone = new FiveGPhone("John", "White", 7.0, 0.1 , 10.0);
-            System.out.println("The  owner is: " + johnPhone.getOwner());
-            johnPhone.sendSMS("Jane", "Will you go to lunch with me?");
-            johnPhone.sendSMS("Jane");
+        // FiveGPhone johnPhone = new FiveGPhone("John", "White", 7.0, 0.1 , 10.0);
+        //     System.out.println("The  owner is: " + johnPhone.getOwner());
+        //     johnPhone.sendSMS("Jane", "Will you go to lunch with me?");
+        //     johnPhone.sendSMS("Jane");
 
+            IntPhone phone = new TwoGPhone("Tom", "black",5.0);
+            call(phone);
+
+            phone = new FiveGPhone("John", "white", 7.0, 0.1, 10.0);
+            call(phone);
+
+            phone =  new SixGPhone("Jane", "red", 9.0);
+            call(phone);
+    }
+
+    public static void call(IntPhone phone){
+        phone.ring();
     }
 }
 
