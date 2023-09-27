@@ -14,5 +14,5 @@ public class Undergraduate extends Student{
         overall += finalExam.getPercentage() * finalExam.getScore();
         return overall;
     } 
-    
+     
 }
