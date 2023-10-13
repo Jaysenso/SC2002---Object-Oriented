@@ -23,3 +23,8 @@
 hs_err_pid*
 replay_pid*
 .idea/workspace.xml
+Labs/Lab4/SurfaceArea/out/production/SurfaceArea/.idea/misc.xml
+Labs/Lab4/SurfaceArea/out/production/SurfaceArea/.idea/modules.xml
+Labs/Lab4/SurfaceArea/out/production/SurfaceArea/SurfaceArea.iml
+*.xml
+*.iml
