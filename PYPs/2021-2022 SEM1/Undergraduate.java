@@ -13,6 +13,6 @@ public class Undergraduate extends Student{
         double overall = assignment.getPercentage() * assignment.getScore();
         overall += finalExam.getPercentage() * finalExam.getScore();
         return overall;
-    }
-    
+    } 
+     
 }

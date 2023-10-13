@@ -4,6 +4,6 @@ public abstract class Student {
     public Student(String name){
         this.name = name;
     }
-
+ 
     public abstract double calOverall();
 }

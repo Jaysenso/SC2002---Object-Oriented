@@ -9,7 +9,7 @@ public class CourseComponent{
         this.percentage = percentage;
         this.score = score;
     }
-
+ 
     public double getPercentage(){
         return this.percentage;
     }

@@ -13,10 +13,10 @@ public class StudentApp{
         Student Shane = new Graduate("Shane", assignment2, researchReport2, finalExam2);  
 
         printOverall(Johnny);
-        printOverall(Shane);
+        printOverall(Shane); 
     }
 
-    //dynamic binding (upcasting graduate&undergraduate to Student (base class))
+    //dynamic binding (upcasting graduate&undergraduate to Student (base class)) 
     public static void printOverall(Student studentName){
         System.out.printf("The student 's score is %.2f \n",studentName.calOverall());
     }
