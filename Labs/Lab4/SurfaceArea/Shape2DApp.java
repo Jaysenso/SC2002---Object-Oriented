@@ -6,64 +6,94 @@ public class Shape2DApp {
 
         ArrayList<Shape> shapeList = new ArrayList<Shape>(); //stores our shape objects in an arrayList for calculation later
         Scanner sc = new Scanner(System.in);
+        Shape shape = null;
         int numOfShapes;
         int choice;
+        boolean updateFlag;
+        do {
+            System.out.println("-------------------------------------");
+            System.out.print("Enter the total number of shapes : ");
+            numOfShapes = sc.nextInt();
+        }while(numOfShapes <= 0);
 
-        System.out.println("-------------------------------------");
-        System.out.printf("Enter the total number of shapes : ");
-        numOfShapes = sc.nextInt();
+        for(int i = 0; i < numOfShapes; i++) {
 
-        for(int i = 0; i < numOfShapes; i++){
-            System.out.println("\nChoose the shape:\n1.Square\n2.Rectangle\n3.Circle\n4.Triangle");
-            System.out.println("Enter Choice :");
-            choice = sc.nextInt();
-            switch(choice){
-                //Square
-                case 1: 
-                    System.out.printf("Enter length of the side: ");
-                    double side = sc.nextDouble();
+            updateFlag = false;
 
-                    Shape square = new Square(side);
-                    shapeList.add(square);
-                    break;
+            while (!updateFlag) {
+                System.out.println("\nChoose the shape:\n1.Square\n2.Rectangle\n3.Circle\n4.Triangle");
+                System.out.print("Enter Choice :");
+                choice = sc.nextInt();
 
-                //Rectangle    
-                case 2:
-                    System.out.printf("Enter Height : ");
-                    double rectHeight = sc.nextDouble();
-                    System.out.println();
-                    System.out.printf("Enter Breadth : ");
-                    double breadth = sc.nextDouble();
+                switch (choice) {
 
-                    Shape rectangle = new Rectangle(rectHeight, breadth);
-                    shapeList.add(rectangle);
-                    break;
+                    //Square
+                    case 1:
+                        System.out.print("Enter length of the side: ");
+                        double side = sc.nextDouble();
+                        //error handling
+                        if (side <= 0) {
+                            System.out.println("Invalid dimensions!");
+                            break;
+                        }
+                        shape = new Square(side);
+                        shapeList.add(shape);
+                        updateFlag = true;
+                        break;
 
-                //Circle
-                case 3:
-                    System.out.printf("Enter Radius: ");
-                    double radius = sc.nextDouble();
-                    
-                    Shape circle = new Circle(radius);
-                    shapeList.add(circle);
-                    break;
+                    //Rectangle
+                    case 2:
+                        System.out.print("Enter Height : ");
+                        double rectHeight = sc.nextDouble();
+                        System.out.print("Enter Breadth : ");
+                        double breadth = sc.nextDouble();
+                        //error handling
+                        if (rectHeight <= 0 || breadth <= 0) {
+                            System.out.println("Invalid dimensions!");
+                            break;
+                        }
+                        shape = new Rectangle(rectHeight, breadth);
+                        shapeList.add(shape);
+                        updateFlag = true;
+                        break;
 
-                //Triangle
-                case 4:
-                    System.out.printf("Enter Height : ");
-                    double circHeight = sc.nextDouble();
-                    System.out.println();
-                    System.out.printf("Enter Base : ");
-                    double base = sc.nextDouble();
+                    //Circle
+                    case 3:
+                        System.out.print("Enter Radius: ");
+                        double radius = sc.nextDouble();
+                        //error handling
+                        if (radius <= 0) {
+                            System.out.println("Invalid dimensions!");
+                            break;
+                        }
+                        shape = new Circle(radius);
+                        shapeList.add(shape);
+                        updateFlag = true;
+                        break;
 
-                    Shape triangle = new Triangle(circHeight, base);
-                    shapeList.add(triangle);
-                    break;
-                default:
-                    break;
+                    //Triangle
+                    case 4:
+                        System.out.print("Enter Height : ");
+                        double circHeight = sc.nextDouble();
+                        System.out.print("Enter Base : ");
+                        double base = sc.nextDouble();
+                        //error handling
+                        if (circHeight <= 0 || base <= 0) {
+                            System.out.println("Invalid dimensions!");
+                            break;
+                        }
+                        shape = new Triangle(circHeight, base);
+                        shapeList.add(shape);
+                        updateFlag = true;
+                        break;
+
+                    default:
+                        break;
+                }
             }
         }
-        //calculation (area / volume)
+
+        //Area calculation (area / volume)
         String areaChoice = null;
         do{
             System.out.println("\nCalculate Area? y/n");
@@ -84,25 +114,4 @@ public class Shape2DApp {
         }while(!areaChoice.equals("y"));
     }
 
-    //we downcast it and calculate using its declared implementation
-    public double calArea(Shape shape){
-        if(shape instanceof Square){
-            Square square = (Square) shape;
-            return(square.calArea());
-        }
-        else if(shape instanceof Circle){
-            Circle circle = (Circle) shape;
-            return(circle.calArea());
-        }
-        else if (shape instanceof Rectangle){
-            Rectangle rectangle = (Rectangle) shape;
-            return(rectangle.calArea());
-        }
-        else if(shape instanceof Triangle){
-            Triangle triangle = (Triangle) shape;
-            return(triangle.calArea());
-        }
-
-        return -1;
-    }
 }

@@ -7,7 +7,6 @@ public class Cylinder extends Rectangle{
         super(height, radius);
     }
 
-    @Override
     public double calArea() {
         return ((2 * Math.PI * super.breadth * super.length) + (2 * Math.PI * Math.pow(super.breadth,2)));
     }

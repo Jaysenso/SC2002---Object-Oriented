@@ -11,9 +11,11 @@ public class Shape3DApp {
         int choice = 0;
         boolean updateFlag; //upon successful update of dimensions, update this flag and move to next iteration, else keep looping
 
-        System.out.println("-------------------------------------");
-        System.out.print("Enter the total number of shapes : ");
-        numOfShapes = sc.nextInt();
+        do {
+            System.out.println("-------------------------------------");
+            System.out.print("Enter the total number of shapes : ");
+            numOfShapes = sc.nextInt();
+        }while(numOfShapes <= 0);
 
         for(int i = 0; i < numOfShapes; i++) {
             //updateFlag will be updated numOfShapes times
@@ -22,7 +24,7 @@ public class Shape3DApp {
             while (!updateFlag) {
                     try {
                         System.out.println("\nChoose the shape:\n1.Cube\n2.Cuboid\n3.Sphere\n4.Square-based Pyramid\n5.Cone\n6.Cylinder");
-                        System.out.println("Enter Choice :");
+                        System.out.print("Enter Choice :");
                         choice = sc.nextInt();
                     }
                     catch (InputMismatchException e){
@@ -49,9 +51,9 @@ public class Shape3DApp {
                     case 2:
                         System.out.print("Enter Height : ");
                         double rectHeight = sc.nextDouble();
-                        System.out.print("\nEnter Breadth : ");
+                        System.out.print("Enter Breadth : ");
                         double breadth = sc.nextDouble();
-                        System.out.print("\nEnter Length : ");
+                        System.out.print("Enter Length : ");
                         double length = sc.nextDouble();
 
                         //error handling
@@ -82,15 +84,15 @@ public class Shape3DApp {
                     //Square-based Pyramid
                     case 4:
                         System.out.print("Enter Height : ");
-                        double circHeight = sc.nextDouble();
-                        System.out.print("\nEnter Base : ");
+                        double pyramidHeight = sc.nextDouble();
+                        System.out.print("Enter Base : ");
                         double base = sc.nextDouble();
 
-                        if(circHeight <= 0 || base <= 0){
+                        if(pyramidHeight <= 0 || base <= 0){
                             System.out.println("Invalid dimensions!");
                             break;
                         }
-                        shape = new Pyramid(circHeight, base);
+                        shape = new Pyramid(pyramidHeight, base);
                         shapeList.add(shape);
                         updateFlag = true;
                         break;
@@ -99,7 +101,7 @@ public class Shape3DApp {
                     case 5:
                         System.out.print("Enter Height : ");
                         double coneHeight = sc.nextDouble();
-                        System.out.print("\nEnter Radius : ");
+                        System.out.print("Enter Radius : ");
                         double coneRadius = sc.nextDouble();
 
                         if(coneHeight <= 0 || coneRadius <= 0){
@@ -115,7 +117,7 @@ public class Shape3DApp {
                     case 6:
                         System.out.print("Enter Height : ");
                         double cylHeight = sc.nextDouble();
-                        System.out.print("\nEnter Radius : ");
+                        System.out.print("Enter Radius : ");
                         double cylRadius = sc.nextDouble();
 
                         //error handling
