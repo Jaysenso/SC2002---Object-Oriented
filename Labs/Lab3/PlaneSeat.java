@@ -27,7 +27,6 @@ public class PlaneSeat{
     }
     //unAssign reinitialize all the variables
     public void unAssign(){
-        this.seatId = -1;
         this.assigned = false;
         this.customerId = -1;
     }

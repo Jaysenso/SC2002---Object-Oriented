@@ -8,7 +8,7 @@ public class PlaneApp {
         boolean bySeatId;
         Plane plane = new Plane();
 
-        System.out.println("(1) Show nubmer of empty seats");
+        System.out.println("(1) Show number of empty seats");
         System.out.println("(2) Show the list of empty seats");
         System.out.println("(3) Show the list of seat assignments by seat ID");
         System.out.println("(4) Show the list of seat assignments by customer ID");

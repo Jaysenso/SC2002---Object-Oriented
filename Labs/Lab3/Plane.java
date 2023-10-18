@@ -74,6 +74,10 @@ public class Plane {
             System.out.println("Invalid SeatId");
             return;
         }
+        if(numEmptySeat <= 0){
+            System.out.println("No empty Seats");
+            return;
+        }
 
         if(seat[seatId - 1].isOccupied() == false){
             seat[seatId - 1].assign(cust_id);
