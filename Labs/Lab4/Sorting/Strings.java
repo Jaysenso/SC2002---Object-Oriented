@@ -23,7 +23,8 @@ public static void main (String[] args)
 	for (int i = 0; i < size; i++) 
 		stringList[i] = scan.nextLine();
 		
-    Sorting.selectionSort(stringList);
+    //Sorting.selectionSort(stringList);
+	Sorting.insertionSort(stringList);
 
 
     System.out.println ("\nYour Strings in sorted order...");
