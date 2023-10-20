@@ -1,1 +1,1 @@
-# SC2002---Object-Oriented
+# SC2002-Object-Oriented
