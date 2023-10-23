@@ -22,15 +22,19 @@ public class SalePerson implements Comparable<Object> {
         return false;
     }
 
-
     public int compareTo(Object o){
 
         if(o instanceof SalePerson){
             SalePerson salePerson = (SalePerson) o; //downcasting "o" to salePerson, since object class is grandfather of all objects
             if(this.totalSales < salePerson.totalSales) return -1;
             else if(this.totalSales > salePerson.totalSales) return 1;
+            else
+                return this.lastName.compareTo(salePerson.lastName) * -1;
         }
-        return 0;
+
+        f () => {dasdsad}
+
+        return 0; //this is never called
     }
 
     //getters
