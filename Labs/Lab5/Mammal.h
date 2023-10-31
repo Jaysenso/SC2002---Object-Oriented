@@ -1,21 +1,17 @@
-#pragma once
 #ifndef MAMMAL_H
 #define MAMMAL_H
 
-#include <Animal.h>
+#include "Animal.h"
 
-class Mammal : Animal {
-
+class Mammal : public Animal {
+private:
 public:
-	Mammal();
-	Mammal(string n, COLOR c);
-	~Mammal();
+    Mammal();
+    Mammal(string n, COLOR c);  
+    ~Mammal();                 
 
-	void eat() const;
-	void speak() const;
-	
+    void move() const;
+    virtual void eat() const;
 };
-#endif
 
-
-
+#endif 

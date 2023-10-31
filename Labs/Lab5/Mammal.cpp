@@ -1,23 +1,22 @@
-#include <iostream>
-#include <string>
-#include <Mammal.h>
+#include "Mammal.h"
 
 Mammal::Mammal() : Animal() {
 
 }
 
-Mammal::Mammal(string n, COLOR c) : Animal() {
+Mammal::Mammal(string n, COLOR c) : Animal(n, c) {
 
 }
 
-Mammal :: ~Mammal()  {
-	
+Mammal::~Mammal() {
+
 }
 
-void Mammal :: eat() const {
-	cout << "Mammal eat " << endl;
+void Mammal::move() const {
+    cout << "Mammal moves " << endl;
 }
 
-void Mammal::speak() const {
-	cout << "Mammal speak " << endl;
+void Mammal::eat() const {
+    cout << "Mammal eats " << endl;
 }
+
