@@ -59,6 +59,9 @@ Labs/Lab3/tempCodeRunnerFile.java
 *.a
 *.lib
 
+#C++ cache files
+*.ipch
+
 # Executables
 *.exe
 *.out
